@@ -1,0 +1,73 @@
+<div class="container-fluid px-0">
+   {{!-- Navigation --}}
+   <nav class="navbar navbar-expand-md navbar-dark py-3 bg-dark">
+      <a class="navbar-brand ml-md-5 font-weight-bold" href="#">
+         Codey McDaniel
+      </a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+         aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse mr-5" id="navbar">
+         <ul class="navbar-nav navbar-right ml-md-auto">
+            <li class="nav-item">
+               <a class="nav-link" href="https://codeycsm.github.io/My-Portfolio/index.html">About
+                  Me</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="https://codeycsm.github.io/My-Portfolio/portfolio.html">My
+                  Portfolio</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="https://codeycsm.github.io/My-Portfolio/contact.html">Contact
+                  Me</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="https://codeycsm.github.io/My-Portfolio/resume.pdf">My
+                  Resume</a>
+            </li>
+         </ul>
+      </div>
+   </nav>
+   {{!-- Eat-Da-Burger content --}}
+   <div class="row-xs-12 mb-5 text-center mt-5">
+      <h1>Eat-Da-Burger</h1>
+      <img src="/assets/img/burger.png" class="" alt="Burger img">
+   </div>
+   <div class="row-xs-12 mb-5 text-center mx-5">
+      <form action="" method="">
+         <div class="form-group">
+            <input id="newBurger" class="form-control" type="text" name="burger" placeholder="Enter a burger to eat.">
+         </div>
+         <button id="submit" class="btn btn-success">Submit</button>
+      </form>
+   </div>
+   <div class="row mb-5 mx-5">
+      <div id="uneaten" class="col-md-6 mx-auto text-center bg-light py-3">
+         <h1 class="mb-5 border-bottom">Eat</h1>
+         {{#each burgers}}
+         {{#unless devoured}}
+         <form action="" method="">
+            <div class="mb-3">
+               <p class="d-inline-block pr-3 burgers">{{burger_name}}</p>
+               <button id="{{id}}" class="btn btn-info devour">Devour</button>
+            </div>
+         </form>
+         {{/unless}}
+         {{/each}}
+
+      </div>
+      <div class="col-md-6 mx-auto text-center  bg-light py-3">
+         <h1 class="mb-5 border-bottom">Eaten</h1>
+         {{#each burgers}}
+         {{#if devoured}}
+         <p class="burgers">{{burger_name}}</p>
+         {{/if}}
+         {{/each}}
+      </div>
+   </div>
+   {{!-- Footer content --}}
+   <footer class="text-white text-center py-3 bg-dark">&copy; Codey McDaniel</footer>
+</div>
