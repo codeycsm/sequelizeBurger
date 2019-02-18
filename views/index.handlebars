@@ -39,7 +39,8 @@
    <div class="row-xs-12 mb-5 text-center mx-5">
       <form action="" method="">
          <div class="form-group">
-            <input id="newBurger" class="form-control" type="text" name="burger" placeholder="Enter a burger to eat.">
+            <input id="newBurger" class="form-control" type="text" name="burger" placeholder="Enter a burger to eat."
+               required>
          </div>
          <button id="submit" class="btn btn-success">Submit</button>
       </form>
@@ -47,23 +48,31 @@
    <div class="row mb-5 mx-5">
       <div id="uneaten" class="col-md-6 mx-auto text-center bg-light py-3">
          <h1 class="mb-5 border-bottom">Eat</h1>
+         <form action="" method=""></form>
          {{#each burgers}}
          {{#unless devoured}}
-         <form action="" method="">
-            <div class="mb-3">
-               <p class="d-inline-block pr-3 burgers">{{burger_name}}</p>
-               <button id="{{id}}" class="btn btn-info devour">Devour</button>
+
+         <div class="mb-3 d-flex flex-row align-items-center justify-content-around">
+            <div class="d-inline-block">
+               <p class="pr-3 burgers">{{burger_name}}</p>
             </div>
-         </form>
+            <div class="mt-3">
+               <form action="" method="">
+                  <input type="text" class="d-block" placeholder="Your name">
+                  <button id="{{id}}" class="btn btn-info devour">Devour</button>
+               </form>
+            </div>
+         </div>
+
          {{/unless}}
          {{/each}}
-
+         </form>
       </div>
       <div class="col-md-6 mx-auto text-center  bg-light py-3">
          <h1 class="mb-5 border-bottom">Eaten</h1>
          {{#each burgers}}
          {{#if devoured}}
-         <p class="burgers">{{burger_name}}</p>
+         <p class="burgers">{{burger_name}} (eaten by {{name}})</p>
          {{/if}}
          {{/each}}
       </div>
