@@ -13,4 +13,4 @@ Create a list of burgers you want to eat. After eating a burger on the list clic
 - MySQL
 - Sequalize
 
-# [Try Me]()
+# [Try Me](https://glacial-castle-91166.herokuapp.com/)
